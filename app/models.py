@@ -3,6 +3,10 @@ from django.utils.text import slugify
 
 # Create your models here.
 
+class GalleryImage(models.Model):
+    image=models.ImageField(upload_to='gallery')
+
+
 
 class InteriorWork(models.Model):
     INTERIOR_TYPES = [
@@ -34,3 +38,15 @@ class InteriorWork(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    phone = models.CharField(max_length=12)
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Message from {self.name} - {self.subject}"

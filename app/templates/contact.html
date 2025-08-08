@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<!-- Hero Section -->
+<section class="relative py-32 bg-black">
+    <img src="{% static 'image/slider1.jpg' %}" alt="Contact Us"
+        class="absolute inset-0 w-full h-full object-cover z-0">
+    <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+    <div class="relative z-20 max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl  font-extrabold text-white mb-6" data-aos="fade-down">Contact Us</h1>
+        <p class="text-lg text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            Have a project in mind? Let’s talk. We’d love to hear from you.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Details & Form -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
+
+        <!-- Contact Info -->
+        <div data-aos="fade-right">
+            <h2 class="text-3xl font-bold text-black mb-6">Get In Touch</h2>
+            <p class="text-gray-600 mb-8">Fill out the form or reach us through any of the channels below.</p>
+
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-black">Address</h4>
+                        <p class="text-gray-600">123 Street, kollam, Kerala</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-black">Phone</h4>
+                        <p class="text-gray-600">+91 98765 43210</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-black">Email</h4>
+                        <p class="text-gray-600">info@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div data-aos="fade-left">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="bg-green-100 text-green-800 p-4 rounded mb-4 flex justify-between items-center"
+                data-aos="slide-left">
+                <span>{{ message }}</span>
+                <button onclick="this.parentElement.style.display='none'"
+                    class="text-green-800 font-bold text-lg ml-4">&times;</button>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+
+            <h2 class="text-3xl font-bold text-black mb-6">Send Us Your Query</h2>
+            <form method="POST" action="{% url 'contact' %}" class="bg-gray-100 p-8 rounded-xl shadow-lg">
+                {% csrf_token %}
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Name</label>
+                        <input type="text" name="name"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black outline-none"
+                            required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Phone</label>
+                        <input type="phone" name="phone"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black outline-none"
+                            required>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="block text-gray-700 font-medium mb-2">Subject</label>
+                    <input type="text" name="subject"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black outline-none">
+                </div>
+
+                <div class="mt-6">
+                    <label class="block text-gray-700 font-medium mb-2">Message</label>
+                    <textarea name="message" rows="5"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black outline-none"
+                        required></textarea>
+                </div>
+
+                <div class="mt-6">
+                    <button type="submit"
+                        class="w-full bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-300">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Google Map -->
+<iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3746.946324796019!2d76.6018202747788!3d8.880256091175232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05fdb97250aad5%3A0xbff685223bfa38ea!2sInspireZest%20Technologies%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1754627324796!5m2!1sen!2sin"
+    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+{% endblock %}

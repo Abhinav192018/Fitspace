@@ -16,10 +16,47 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
+    <!-- fevicon -->
+    <link rel="icon" href="{% static 'image/logo.png' %}" type="image/png">
 </head>
 
+
+<style>
+    @keyframes revealFromBottom {
+        from {
+            clip-path: inset(100% 0 0 0);
+        }
+
+        to {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    #logo-black {
+    clip-path: inset(100% 0 0 0); /* Fully hidden at start */
+    transition: clip-path 0.2s ease;
+}
+
+</style>
+
+
+
 <body>
+
+    <!-- Logo Loader -->
+<div id="logo-loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <div class="relative w-40 h-40 overflow-hidden">
+        <!-- White logo -->
+        <img src="{% static 'image/logo.png' %}" alt="Logo white"
+            class="absolute inset-0 w-full h-full object-contain brightness-0 invert">
+        <!-- Black logo (will be revealed gradually) -->
+        <img src="{% static 'image/logo.png' %}" alt="Logo black"
+            class="absolute inset-0 w-full h-full object-contain" id="logo-black">
+    </div>
+</div>
+
+
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -37,14 +74,14 @@
                 <li class="nav-item">
                     <a href="/project/" class="nav-link">Projects</a>
                 </li>
-               
+
                 <li class="nav-item">
                     <a href="/elements/" class="nav-link">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a href="/ourshowroom/" class="nav-link">Showroom</a>
                 </li>
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a href="/gallery/" class="nav-link">Gallery</a>
                 </li>
                 <li class="nav-item">
@@ -210,6 +247,64 @@
             });
         });
     </script>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const blackLogo = document.getElementById("logo-black");
+
+    // Estimate loading progress
+    let totalResources = document.images.length + document.scripts.length + document.styleSheets.length;
+    let loadedResources = 0;
+
+    function updateProgress() {
+        loadedResources++;
+        let progress = Math.min(loadedResources / totalResources, 1); // 0 to 1
+        let clipValue = 100 - Math.floor(progress * 100);
+        blackLogo.style.clipPath = `inset(${clipValue}% 0 0 0)`;
+    }
+
+    // Track image load
+    document.querySelectorAll("img").forEach(img => {
+        if (img.complete) {
+            updateProgress();
+        } else {
+            img.addEventListener("load", updateProgress);
+            img.addEventListener("error", updateProgress);
+        }
+    });
+
+    // Track script load
+    document.querySelectorAll("script").forEach(script => {
+        if (script.readyState === "complete" || script.readyState === "loaded") {
+            updateProgress();
+        } else {
+            script.addEventListener("load", updateProgress);
+            script.addEventListener("error", updateProgress);
+        }
+    });
+
+    // Track stylesheet load
+    document.querySelectorAll("link[rel='stylesheet']").forEach(link => {
+        link.addEventListener("load", updateProgress);
+        link.addEventListener("error", updateProgress);
+    });
+
+    // Remove loader once everything is loaded
+    window.addEventListener("load", () => {
+        blackLogo.style.clipPath = "inset(0 0 0 0)"; // Ensure fully filled
+        setTimeout(() => {
+            const loader = document.getElementById("logo-loader");
+            loader.style.opacity = "0";
+            loader.style.transition = "opacity 0.5s ease";
+            setTimeout(() => loader.style.display = "none", 500);
+        }, 300); // small delay so last fill is visible
+    });
+});
+</script>
+
+
+
 </body>
 
 </html>

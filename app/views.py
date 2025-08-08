@@ -1,6 +1,10 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import InteriorWork
+from .models import InteriorWork,GalleryImage,Contact
+from .forms import ContactForm
 # Create your views here.
+
+
+
 
 
 def Home(request):
@@ -24,10 +28,23 @@ def Projuct_details(request,id):
     return render(request,'projuct-details.html',{'projuct':projuct_details})
 
 def Ourshowroom(request):
-    return render(request,'ourshowroom.html')
+    images=GalleryImage.objects.order_by("-id")[:6]
+    return render(request,'ourshowroom.html',{"images":images})
 
 def Gallery(request):
-    return render(request,"gallery.html")
+    images=GalleryImage.objects.order_by("-id")
+    return render(request,"gallery.html",{"images":images})
 
+
+from django.contrib import messages
 def contact(request):
-    return render(request,'contact.html')
+    if request.method == 'POST':
+        Contact.objects.create(
+            name=request.POST.get('name'),
+            phone=request.POST.get('phone'),
+            subject=request.POST.get('subject'),
+            message=request.POST.get('message')
+        )
+        messages.success(request, "Your message was sent successfully")
+        return redirect('contact')
+    return render(request, 'contact.html')

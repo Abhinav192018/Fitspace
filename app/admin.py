@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import InteriorWork
+from .models import InteriorWork,GalleryImage
 # Register your models here.
 
 
@@ -8,3 +8,4 @@ admin.site.site_title = "Fitspace Admin Portal"
 admin.site.index_title = "Welcome to Fitspace Admin Portal"
 
 admin.site.register(InteriorWork)
+admin.site.register(GalleryImage)
