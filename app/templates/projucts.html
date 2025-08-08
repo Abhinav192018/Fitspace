@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-black mt-12">Our Projects</h2>
+            <p class="text-gray-600 mt-4">
+                Explore our diverse portfolio showcasing innovative designs and successful transformations.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            {% for project in projects %}
+            <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300" >
+                <img src="{{ project.image1.url }}" alt="{{ project.title }}" class="w-full h-48 object-cover rounded-lg mb-4" data-aos="fade-right">
+                <h3 class="text-xl font-semibold text-black mb-2">{{ project.title }}</h3>
+                <a href="{% url 'project-details' project.id  %}" class="inline-block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300">
+                    View Details
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

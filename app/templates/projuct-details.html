@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="bg-white text-black py-20 min-h-screen" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Title & Location -->
+    <div class="text-center my-12">
+      <h1 class="text-4xl md:text-5xl font-bold" data-aos="fade-down">{{ projuct.interior_type }}</h1>
+      <p class="mt-2 text-lg text-gray-600" data-aos="fade-down" data-aos-delay="100">{{ projuct.location }} • {{ projuct.interior_type }}</p>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid lg:grid-cols-12 gap-10">
+      
+      <!-- Image Gallery -->
+      <div class="lg:col-span-7">
+        <!-- Main Image -->
+        <div class="border rounded-xl overflow-hidden shadow-lg mb-6" data-aos="fade-right">
+          <img id="mainImage" src="{{ projuct.image1.url }}" alt="{{ projuct.title }}" class="w-full h-[400px] object-cover rounded-xl">
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="flex gap-4 flex-wrap justify-start">
+          {% if projuct.image1 %}<img src="{{ projuct.image1.url }}" onclick="updateMainImage(this.src)" class="thumb-img">{% endif %}
+          {% if projuct.image2 %}<img src="{{ projuct.image2.url }}" onclick="updateMainImage(this.src)" class="thumb-img">{% endif %}
+          {% if projuct.image3 %}<img src="{{ projuct.image3.url }}" onclick="updateMainImage(this.src)" class="thumb-img">{% endif %}
+          {% if projuct.image4 %}<img src="{{ projuct.image4.url }}" onclick="updateMainImage(this.src)" class="thumb-img">{% endif %}
+          {% if projuct.image5 %}<img src="{{ projuct.image5.url }}" onclick="updateMainImage(this.src)" class="thumb-img">{% endif %}
+        </div>
+      </div>
+
+      <!-- Project Info -->
+      <div class="lg:col-span-5 space-y-6" data-aos="fade-left">
+        <h2 class="text-2xl font-semibold">Project Overview</h2>
+        <p class="text-gray-800 leading-relaxed">{{ projuct.description }}</p>
+
+        <div class="space-y-2 text-sm text-gray-700">
+          {% if projuct.client_name %}
+          <p><strong>Client:</strong> {{ projuct.client_name }}</p>
+          {% endif %}
+          <p><strong>Type:</strong> {{ projuct.interior_type }}</p>
+          <p><strong>Location:</strong> {{ projuct.location }}</p>
+          <p><strong>Completion Date:</strong> {{ projuct.completion_date }}</p>
+        </div>
+
+        <a href="{% url 'project' %}" class="inline-block mt-4 px-6 py-2 bg-black text-white rounded hover:bg-gray-800 transition-all" data-aos="fade-up" data-aos-delay="300">
+          ← Back to Projects
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .thumb-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .thumb-img:hover {
+    border-color: black;
+  }
+</style>
+
+<script>
+  function updateMainImage(src) {
+    document.getElementById("mainImage").src = src;
+  }
+</script>
+
+{% endblock %}

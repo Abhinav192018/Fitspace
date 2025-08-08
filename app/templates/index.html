@@ -1,0 +1,674 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+
+<body class="bg-white">
+	<!-- Navigation (from previous design) -->
+
+
+	<!-- ...existing code... -->
+	<section class="relative h-screen w-full overflow-hidden">
+		<div id="carousel" class="relative h-full w-full">
+
+			<!-- Slide 1 -->
+			<div
+				class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out z-10 slide-active">
+				<img src="{% static 'image/slider1.jpg' %}" class="w-full h-full object-cover" alt="Slider 1">
+				<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+				<div
+					class="absolute inset-0 flex flex-col items-start justify-center text-left text-white px-8 md:px-24 z-20 space-y-6">
+					<span
+						class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold tracking-widest uppercase mb-2 backdrop-blur">Award-Winning
+						Designs</span>
+					<h1 class="text-4xl md:text-6xl font-extrabold mb-2 leading-tight max-w-3xl drop-shadow-lg">Elegant
+						Interior Designs for Modern Living</h1>
+					<p class="text-lg md:text-2xl max-w-2xl mb-4 text-gray-200">Transform your home or office with our
+						bespoke solutions, tailored to your lifestyle and taste.</p>
+					<div class="flex flex-wrap gap-4">
+						<a href="#start"
+							class="bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition shadow-lg">Start
+							Now</a>
+						<a href="#contact"
+							class="border-2 border-white px-8 py-3 rounded text-white hover:bg-white hover:text-black transition shadow-lg">Contact
+							Us</a>
+					</div>
+					<div class="flex items-center gap-6 mt-6">
+						<div class="flex items-center gap-2">
+							<i class="fas fa-check-circle text-green-400"></i>
+							<span class="text-sm">Free Consultation</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<i class="fas fa-clock text-yellow-400"></i>
+							<span class="text-sm">Timely Delivery</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<i class="fas fa-star text-yellow-400"></i>
+							<span class="text-sm">5-Star Rated</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 2 -->
+			<div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out z-0">
+				<img src="{% static 'image/slider2.jpg' %}" class="w-full h-full object-cover" alt="Slider 2">
+				<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+				<div
+					class="absolute inset-0 flex flex-col items-start justify-center text-left text-white px-8 md:px-24 z-20 space-y-6">
+					<span
+						class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold tracking-widest uppercase mb-2 backdrop-blur">Personalized
+						Approach</span>
+					<h1 class="text-4xl md:text-6xl font-extrabold mb-2 leading-tight max-w-3xl drop-shadow-lg">Designs
+						That Speak Your Style</h1>
+					<p class="text-lg md:text-2xl max-w-2xl mb-4 text-gray-200">Every project is unique. We listen,
+						understand, and deliver interiors that reflect your personality.</p>
+					<div class="flex flex-wrap gap-4">
+						<a href="#gallery"
+							class="bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition shadow-lg">View
+							Gallery</a>
+						<a href="#contact"
+							class="border-2 border-white px-8 py-3 rounded text-white hover:bg-white hover:text-black transition shadow-lg">Book
+							a Visit</a>
+					</div>
+					<div class="flex items-center gap-6 mt-6">
+						<div class="flex items-center gap-2">
+							<i class="fas fa-user-friends text-blue-400"></i>
+							<span class="text-sm">100+ Happy Clients</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<i class="fas fa-couch text-pink-400"></i>
+							<span class="text-sm">Custom Furniture</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 3 -->
+			<div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out z-0">
+				<img src="{% static 'image/slider3.jpg' %}" class="w-full h-full object-cover" alt="Slider 3">
+				<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+				<div
+					class="absolute inset-0 flex flex-col items-start justify-center text-left text-white px-8 md:px-24 z-20 space-y-6">
+					<span
+						class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold tracking-widest uppercase mb-2 backdrop-blur">Crafted
+						With Care</span>
+					<h1 class="text-4xl md:text-6xl font-extrabold mb-2 leading-tight max-w-3xl drop-shadow-lg">Bespoke
+						Interiors, Crafted With Care</h1>
+					<p class="text-lg md:text-2xl max-w-2xl mb-4 text-gray-200">From concept to completion, our team
+						ensures every detail is perfect for your dream space.</p>
+					<div class="flex flex-wrap gap-4">
+						<a href="#services"
+							class="bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition shadow-lg">Our
+							Services</a>
+						<a href="#contact"
+							class="border-2 border-white px-8 py-3 rounded text-white hover:bg-white hover:text-black transition shadow-lg">Get
+							Quote</a>
+					</div>
+					<div class="flex items-center gap-6 mt-6">
+						<div class="flex items-center gap-2">
+							<i class="fas fa-tools text-indigo-400"></i>
+							<span class="text-sm">Renovation Experts</span>
+						</div>
+						<div class="flex items-center gap-2">
+							<i class="fas fa-headset text-green-400"></i>
+							<span class="text-sm">24/7 Support</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Indicator Buttons -->
+		<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
+			<button class="carousel-btn w-4 h-4 rounded-full bg-white/70 hover:bg-white transition"
+				onclick="showSlide(0)"></button>
+			<button class="carousel-btn w-4 h-4 rounded-full bg-white/40 hover:bg-white transition"
+				onclick="showSlide(1)"></button>
+			<button class="carousel-btn w-4 h-4 rounded-full bg-white/40 hover:bg-white transition"
+				onclick="showSlide(2)"></button>
+		</div>
+	</section>
+	<!-- ...existing code... -->
+
+
+
+
+
+	<!-- Company Overview Section -->
+	<section class="py-20 bg-gray-50" data-aos="fade-up">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl font-black text-black mb-6">About FITSPACE</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">We transform ordinary spaces into extraordinary
+					experiences through innovative design, quality craftsmanship, and personalized service.</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-12 items-center">
+				<div class="space-y-6">
+					<h3 class="text-2xl font-bold text-black">Our Mission</h3>
+					<p class="text-gray-600 leading-relaxed">To create beautiful, functional spaces that enhance the way
+						people live, work, and interact. We believe that great design should be accessible, sustainable,
+						and tailored to each client's unique needs.</p>
+
+					<div class="grid grid-cols-2 gap-6 mt-8">
+						<div class="text-center">
+							<div class="text-3xl font-black text-black mb-2">150+</div>
+							<div class="text-gray-600">Projects Completed</div>
+						</div>
+						<div class="text-center">
+							<div class="text-3xl font-black text-black mb-2">5+</div>
+							<div class="text-gray-600">Years Experience</div>
+						</div>
+						<div class="text-center">
+							<div class="text-3xl font-black text-black mb-2">100+</div>
+							<div class="text-gray-600">Happy Clients</div>
+						</div>
+						<div class="text-center">
+							<div class="text-3xl font-black text-black mb-2">24/7</div>
+							<div class="text-gray-600">Support</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-2 gap-4">
+					<img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+						alt="Interior Design" class="rounded-lg shadow-lg">
+					<img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+						alt="Modern Space" class="rounded-lg shadow-lg mt-8">
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<section class="relative py-20 bg-white overflow-hidden" data-aos="fade-up">
+		<!-- Background Image -->
+		<img src="{% static 'image/slider2.jpg' %}" alt="Background"
+			class="absolute inset-0 w-full h-full object-cover opacity-60 z-0" />
+
+		<!-- Content Wrapper -->
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl font-black text-black mb-6">Our Services</h2>
+				<p class="text-xl text-black max-w-3xl mx-auto">Comprehensive interior design solutions from concept
+					to completion</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300" data-aos="fade-up"
+					data-aos-delay="100">
+					<div class="feature-icon w-16 h-16 rounded-full flex items-center justify-center mb-6">
+						<i class="fas fa-home text-white text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold text-black mb-4">Interior Design</h3>
+					<p class="text-gray-600">Complete interior design solutions for residential and commercial spaces
+						with personalized style.</p>
+				</div>
+
+				<div class="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300" data-aos="fade-up"
+					data-aos-delay="200">
+					<div class="feature-icon w-16 h-16 rounded-full flex items-center justify-center mb-6">
+						<i class="fas fa-ruler-combined text-white text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold text-black mb-4">Space Planning</h3>
+					<p class="text-gray-600">Optimize your space with strategic planning and layout design for maximum
+						functionality.</p>
+				</div>
+
+				<div class="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300" data-aos="fade-up"
+					data-aos-delay="300">
+					<div class="feature-icon w-16 h-16 rounded-full flex items-center justify-center mb-6">
+						<i class="fas fa-couch text-white text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold text-black mb-4">Custom Furniture</h3>
+					<p class="text-gray-600">Bespoke furniture design and manufacturing tailored to your specific
+						requirements.</p>
+				</div>
+
+				<div class="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300" data-aos="fade-up"
+					data-aos-delay="400">
+					<div class="feature-icon w-16 h-16 rounded-full flex items-center justify-center mb-6">
+						<i class="fas fa-tools text-white text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold text-black mb-4">Renovation</h3>
+					<p class="text-gray-600">Complete renovation services to transform your existing space into
+						something extraordinary.</p>
+				</div>
+
+				<div class="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300" data-aos="fade-up"
+					data-aos-delay="500">
+					<div class="feature-icon w-16 h-16 rounded-full flex items-center justify-center mb-6">
+						<i class="fas fa-comments text-white text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold text-black mb-4">Consultation</h3>
+					<p class="text-gray-600">Expert design consultation to help you make informed decisions about your
+						space.</p>
+				</div>
+
+				<div class="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300" data-aos="fade-up"
+					data-aos-delay="600">
+					<div class="feature-icon w-16 h-16 rounded-full flex items-center justify-center mb-6">
+						<i class="fas fa-store text-white text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold text-black mb-4">Showroom Visit</h3>
+					<p class="text-gray-600">Visit our showroom to experience our designs and get inspired for your
+						project.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- Why Choose Us Section -->
+	<section class="py-20 bg-black text-white" data-aos="fade-up">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl font-black mb-6">Why Choose FITSPACE?</h2>
+				<p class="text-xl text-gray-300 max-w-3xl mx-auto">We stand out from the competition with our unique
+					approach and commitment to excellence</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+				<div class="text-center" data-aos="fade-up" data-aos-delay="100">
+					<div
+						class="w-20 h-20 bg-white text-black rounded-full flex items-center justify-center mx-auto mb-6">
+						<i class="fas fa-award text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold mb-4">Expert Team</h3>
+					<p class="text-gray-300">Experienced professionals with proven track record in interior design</p>
+				</div>
+
+				<div class="text-center" data-aos="fade-up" data-aos-delay="200">
+					<div
+						class="w-20 h-20 bg-white text-black rounded-full flex items-center justify-center mx-auto mb-6">
+						<i class="fas fa-clock text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold mb-4">Timely Delivery</h3>
+					<p class="text-gray-300">We respect deadlines and deliver projects on time, every time</p>
+				</div>
+
+				<div class="text-center" data-aos="fade-up" data-aos-delay="300">
+					<div
+						class="w-20 h-20 bg-white text-black rounded-full flex items-center justify-center mx-auto mb-6">
+						<i class="fas fa-dollar-sign text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold mb-4">Competitive Pricing</h3>
+					<p class="text-gray-300">Quality design solutions at competitive prices with transparent billing</p>
+				</div>
+
+				<div class="text-center" data-aos="fade-up" data-aos-delay="400">
+					<div
+						class="w-20 h-20 bg-white text-black rounded-full flex items-center justify-center mx-auto mb-6">
+						<i class="fas fa-headset text-2xl"></i>
+					</div>
+					<h3 class="text-xl font-bold mb-4">24/7 Support</h3>
+					<p class="text-gray-300">Round-the-clock customer support for all your queries and concerns</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Featured Projects Section -->
+	<section class="py-20 bg-gray-50" data-aos="fade-up">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl font-black text-black mb-6">Featured Projects</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore our portfolio of stunning interior design
+					projects</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="project-card bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300"
+					data-aos="fade-up" data-aos-delay="100">
+					<img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+						alt="Modern Living Room" class="w-full h-64 object-cover">
+					<div class="p-6">
+						<h3 class="text-xl font-bold text-black mb-2">Modern Living Room</h3>
+						<p class="text-gray-600 mb-4">Contemporary design with clean lines and neutral tones</p>
+						<a href="/gallery/" class="text-black font-semibold hover:underline">View Details →</a>
+					</div>
+				</div>
+
+				<div class="project-card bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300"
+					data-aos="fade-up" data-aos-delay="200">
+					<img src="{% static 'image/slider2.jpg' %}" alt="Luxury Bedroom" class="w-full h-64 object-cover">
+					<div class="p-6">
+						<h3 class="text-xl font-bold text-black mb-2">Luxury Bedroom</h3>
+						<p class="text-gray-600 mb-4">Elegant master bedroom with premium finishes</p>
+						<a href="/gallery/" class="text-black font-semibold hover:underline">View Details →</a>
+					</div>
+				</div>
+
+				<div class="project-card bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300"
+					data-aos="fade-up" data-aos-delay="300">
+					<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+						alt="Contemporary Kitchen" class="w-full h-64 object-cover">
+					<div class="p-6">
+						<h3 class="text-xl font-bold text-black mb-2">Contemporary Kitchen</h3>
+						<p class="text-gray-600 mb-4">Functional kitchen design with modern appliances</p>
+						<a href="/gallery/" class="text-black font-semibold hover:underline">View Details →</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-center mt-12">
+				<a href="/gallery/"
+					class="bg-black text-white px-8 py-4 text-lg font-bold uppercase tracking-wide hover:bg-gray-800 transition-all inline-block">View
+					All Projects</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials Section -->
+
+	<section class="py-20 bg-white" data-aos="fade-up">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl font-black text-black mb-6">What Our Clients Say</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">Don't just take our word for it - hear from our
+					satisfied clients</p>
+			</div>
+
+			<div class="swiper testimonial-swiper">
+				<div class="swiper-wrapper">
+
+					<!-- Slide 1 -->
+					<div class="swiper-slide p-6 bg-gray-50 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="https://randomuser.me/api/portraits/women/44.jpg"
+								class="w-14 h-14 rounded-full mr-4 object-cover" />
+							<div>
+								<h4 class="font-bold text-black">Sarah Johnson</h4>
+								<p class="text-gray-500 text-sm">Homeowner</p>
+							</div>
+						</div>
+						<div class="flex text-yellow-400 text-sm mb-2">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+								class="fas fa-star"></i><i class="fas fa-star"></i>
+						</div>
+						<p class="text-gray-600 italic">"The team at FITSPACE understood our vision perfectly. Their
+							designs and execution were amazing!"</p>
+					</div>
+
+					<!-- Slide 2 -->
+					<div class="swiper-slide p-6 bg-gray-50 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="https://randomuser.me/api/portraits/men/35.jpg"
+								class="w-14 h-14 rounded-full mr-4 object-cover" />
+							<div>
+								<h4 class="font-bold text-black">David Miller</h4>
+								<p class="text-gray-500 text-sm">Office Owner</p>
+							</div>
+						</div>
+						<div class="flex text-yellow-400 text-sm mb-2">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+								class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+						</div>
+						<p class="text-gray-600 italic">"Excellent craftsmanship and on-time delivery. Highly recommend
+							their services."</p>
+					</div>
+
+					<!-- Slide 3 -->
+					<div class="swiper-slide p-6 bg-gray-50 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="https://randomuser.me/api/portraits/women/65.jpg"
+								class="w-14 h-14 rounded-full mr-4 object-cover" />
+							<div>
+								<h4 class="font-bold text-black">Priya Verma</h4>
+								<p class="text-gray-500 text-sm">Interior Blogger</p>
+							</div>
+						</div>
+						<div class="flex text-yellow-400 text-sm mb-2">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+								class="fas fa-star"></i><i class="fas fa-star"></i>
+						</div>
+						<p class="text-gray-600 italic">"Absolutely loved the ideas and professional attitude of the
+							team."</p>
+					</div>
+
+					<!-- Slide 4 -->
+					<div class="swiper-slide p-6 bg-gray-50 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="https://randomuser.me/api/portraits/men/75.jpg"
+								class="w-14 h-14 rounded-full mr-4 object-cover" />
+							<div>
+								<h4 class="font-bold text-black">Amit Shah</h4>
+								<p class="text-gray-500 text-sm">Business Owner</p>
+							</div>
+						</div>
+						<div class="flex text-yellow-400 text-sm mb-2">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+								class="fas fa-star"></i><i class="fas fa-star"></i>
+						</div>
+						<p class="text-gray-600 italic">"Great team, stunning design, and brilliant customer service.
+							Loved it!"</p>
+					</div>
+
+					<!-- Slide 5 -->
+					<div class="swiper-slide p-6 bg-gray-50 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="https://randomuser.me/api/portraits/women/26.jpg"
+								class="w-14 h-14 rounded-full mr-4 object-cover" />
+							<div>
+								<h4 class="font-bold text-black">Meera Nair</h4>
+								<p class="text-gray-500 text-sm">Architect</p>
+							</div>
+						</div>
+						<div class="flex text-yellow-400 text-sm mb-2">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+								class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+						</div>
+						<p class="text-gray-600 italic">"Their work brought life to my blueprints. Seamless
+							collaboration and elegant results."</p>
+					</div>
+
+					<!-- Slide 6 -->
+					<div class="swiper-slide p-6 bg-gray-50 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="https://randomuser.me/api/portraits/men/85.jpg"
+								class="w-14 h-14 rounded-full mr-4 object-cover" />
+							<div>
+								<h4 class="font-bold text-black">Ravi Kulkarni</h4>
+								<p class="text-gray-500 text-sm">Restaurant Owner</p>
+							</div>
+						</div>
+						<div class="flex text-yellow-400 text-sm mb-2">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+								class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+						</div>
+						<p class="text-gray-600 italic">"FITSPACE turned my restaurant into a visual delight. Customers
+							compliment it daily!"</p>
+					</div>
+
+				</div>
+
+
+			</div>
+			<!-- Swiper Pagination -->
+			<div class="swiper-pagination mt-6"></div>
+		</div>
+	</section>
+
+
+	<!-- FAQ Section -->
+	<section class="py-20 bg-gray-50 transition-all duration-500 group hover:bg-black" data-aos="fade-up">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2
+					class="text-4xl md:text-5xl font-black text-black group-hover:text-white mb-6 transition-all duration-500">
+					Frequently Asked Questions
+				</h2>
+				<p class="text-xl text-gray-600 group-hover:text-gray-300 transition-all duration-500">
+					Get answers to common questions about our services and process
+				</p>
+			</div>
+
+			<div class="space-y-6">
+				<!-- FAQ Item -->
+				<div class="faq-item bg-white group-hover:bg-gray-900 p-6 rounded-lg shadow-md transition-all duration-500"
+					data-aos="fade-up" data-aos-delay="100">
+					<button
+						class="faq-question w-full text-left flex justify-between items-center text-lg font-bold text-black group-hover:text-white hover:text-gray-400 transition-all duration-500">
+						<span>How long does a typical interior design project take?</span>
+						<i class="fas fa-plus faq-icon transition-transform"></i>
+					</button>
+					<div
+						class="faq-answer hidden mt-4 text-gray-600 group-hover:text-gray-300 transition-all duration-500">
+						<p>Project timelines vary depending on scope and complexity. Typically, residential projects
+							take 4-8 weeks for design and 6-12 weeks for implementation. We provide detailed timelines
+							during consultation.</p>
+					</div>
+				</div>
+
+				<!-- FAQ Item -->
+				<div class="faq-item bg-white group-hover:bg-gray-900 p-6 rounded-lg shadow-md transition-all duration-500"
+					data-aos="fade-up" data-aos-delay="200">
+					<button
+						class="faq-question w-full text-left flex justify-between items-center text-lg font-bold text-black group-hover:text-white hover:text-gray-400 transition-all duration-500">
+						<span>Do you provide 3D visualizations of the design?</span>
+						<i class="fas fa-plus faq-icon transition-transform"></i>
+					</button>
+					<div
+						class="faq-answer hidden mt-4 text-gray-600 group-hover:text-gray-300 transition-all duration-500">
+						<p>Yes, we provide detailed 3D renderings and visualizations for all our projects. This helps
+							you see exactly how your space will look before implementation begins.</p>
+					</div>
+				</div>
+
+				<!-- FAQ Item -->
+				<div class="faq-item bg-white group-hover:bg-gray-900 p-6 rounded-lg shadow-md transition-all duration-500"
+					data-aos="fade-up" data-aos-delay="300">
+					<button
+						class="faq-question w-full text-left flex justify-between items-center text-lg font-bold text-black group-hover:text-white hover:text-gray-400 transition-all duration-500">
+						<span>What is included in your design consultation?</span>
+						<i class="fas fa-plus faq-icon transition-transform"></i>
+					</button>
+					<div
+						class="faq-answer hidden mt-4 text-gray-600 group-hover:text-gray-300 transition-all duration-500">
+						<p>Our consultation includes space assessment, discussion of your needs and preferences, style
+							analysis, preliminary design concepts, and a detailed project proposal with timeline and
+							budget.</p>
+					</div>
+				</div>
+
+				<!-- FAQ Item -->
+				<div class="faq-item bg-white group-hover:bg-gray-900 p-6 rounded-lg shadow-md transition-all duration-500"
+					data-aos="fade-up" data-aos-delay="400">
+					<button
+						class="faq-question w-full text-left flex justify-between items-center text-lg font-bold text-black group-hover:text-white hover:text-gray-400 transition-all duration-500">
+						<span>Do you work within specific budgets?</span>
+						<i class="fas fa-plus faq-icon transition-transform"></i>
+					</button>
+					<div
+						class="faq-answer hidden mt-4 text-gray-600 group-hover:text-gray-300 transition-all duration-500">
+						<p>Absolutely! We work with various budget ranges and will create a design plan that maximizes
+							value within your specified budget. We're transparent about costs from the beginning.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-20 bg-black text-white" data-aos="fade-up">
+		<div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+			<h2 class="text-4xl md:text-5xl font-black mb-6">Ready to Transform Your Space?</h2>
+			<p class="text-xl text-gray-300 mb-8">Let's bring your vision to life with our expert design services</p>
+
+			<div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
+				<a href="/contact/"
+					class="bg-white text-black px-8 py-4 text-lg font-bold uppercase tracking-wide hover:bg-gray-100 transition-all inline-block w-full sm:w-auto">Get
+					Free Consultation</a>
+				<a href="/ourshowroom/"
+					class="border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wide hover:bg-white hover:text-black transition-all inline-block w-full sm:w-auto">Visit
+					Our Showroom</a>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<!-- swipper Testimonials  -->
+	<!-- Swiper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+	<script>
+		const swiper = new Swiper(".testimonial-swiper", {
+			loop: true,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			spaceBetween: 30,
+			slidesPerView: 1,
+			breakpoints: {
+				768: { slidesPerView: 2 },
+				1024: { slidesPerView: 3 }
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+		});
+	</script>
+
+	<script>
+		const slides = document.querySelectorAll('.carousel-slide');
+		const indicators = document.querySelectorAll('.carousel-btn');
+		let currentSlide = 0;
+
+		function showSlide(index) {
+			slides.forEach((slide, i) => {
+				slide.style.opacity = i === index ? '1' : '0';
+				slide.style.zIndex = i === index ? '10' : '0';
+				indicators[i].classList.toggle('bg-white/70', i === index);
+				indicators[i].classList.toggle('bg-white/40', i !== index);
+			});
+			currentSlide = index;
+		}
+
+		// Auto-slide every 6 seconds
+		setInterval(() => {
+			let next = (currentSlide + 1) % slides.length;
+			showSlide(next);
+		}, 6000);
+
+
+
+		// Mobile menu toggle
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+		const mobileMenu = document.getElementById('mobile-menu');
+
+		mobileMenuButton.addEventListener('click', () => {
+			mobileMenu.classList.toggle('hidden');
+		});
+
+	</script>
+
+	<!-- q and a  -->
+	<script>
+		document.querySelectorAll('.faq-question').forEach((button) => {
+			button.addEventListener('click', () => {
+				const faqItem = button.closest('.faq-item');
+				const answer = faqItem.querySelector('.faq-answer');
+				const icon = button.querySelector('.faq-icon');
+
+				answer.classList.toggle('hidden');
+				icon.classList.toggle('fa-plus');
+				icon.classList.toggle('fa-minus');
+			});
+		});
+	</script>
+</body>
+
+
+{% endblock %}

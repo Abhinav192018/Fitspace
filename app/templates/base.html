@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITSPACE - Interior Design</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- tailwind  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css  -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo"><img src="{% static 'image/logo.png' %}" style="height: 60px;" alt="logo"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about/" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/service/" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/project/" class="nav-link">Projects</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a href="/elements/" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/ourshowroom/" class="nav-link">Showroom</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="/gallery/" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact/" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Floating Buttons Container -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4">
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/1234567890" target="_blank" class="group relative">
+            <div
+                class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center shadow-md hover:bg-green-600 transition-all duration-300">
+                <i class="fab fa-whatsapp text-white text-xl"></i>
+            </div>
+            <span
+                class="absolute right-14 top-1/2 transform -translate-y-1/2 bg-green-600 text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Chat on WhatsApp
+            </span>
+        </a>
+
+        <!-- Call Button -->
+        <a href="tel:+1234567890" class="group relative">
+            <div
+                class="bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 transition-all duration-300">
+                <i class="fas fa-phone-alt text-white text-xl"></i>
+            </div>
+            <span
+                class="absolute right-14 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Call Now
+            </span>
+        </a>
+
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">FITSPACE</div>
+                    <p>Transforming spaces into beautiful, functional environments that inspire and delight. Your
+                        vision, our expertise.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/service/">Services</a></li>
+                        <li><a href="/product/">Products</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/elements/">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/service/">Interior Design</a></li>
+                        <li><a href="/service/">Space Planning</a></li>
+                        <li><a href="/service/">Custom Furniture</a></li>
+                        <li><a href="/service/">Renovation</a></li>
+                        <li><a href="/ourshowroom/">Showroom Visit</a></li>
+                        <li><a href="/contact/">Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Design Street, Creative City, CC 12345</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@fitspace.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 FITSPACE. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration in ms
+            once: true,     // Whether animation should happen only once
+        });
+    </script>
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Active link highlighting
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href === currentPath || (currentPath === '/' && href === '/')) {
+                link.classList.add('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
