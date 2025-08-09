@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Blog - Interior Design Inspirations{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative py-32 bg-black">
+    <img src="{% static 'image/slider1.jpg' %}" alt="Interior Design Banner"
+        class="absolute inset-0 w-full h-full object-cover z-0" />
+    <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+    <div class="relative z-20 max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-4xl font-extrabold text-white mb-6" data-aos="fade-down" data-aos-duration="1000">Our Blog</h1>
+        <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
+           Discover stunning interior design ideas, tips, and expert insights to transform your space.
+        </p>
+    </div>
+</section>
+
+<!-- Featured Article -->
+<section class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up" data-aos-duration="1000">
+            <div>
+                <img src="{% static 'image/slider2.jpg' %}" alt="Featured Article" class="w-full h-80 object-cover rounded-lg shadow-lg" data-aos="fade-right" data-aos-duration="1000" />
+            </div>
+            <div>
+                <span class="inline-block px-3 py-1 bg-black text-white text-sm rounded-full mb-4">Featured</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
+                    Elevate Your Living Room: Modern Interior Trends for 2025
+                </h2>
+                <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                    Explore the top trends in living room design that blend comfort and style, from minimalist décor to bold statement pieces.
+                </p>
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white font-bold">
+                        AH
+                    </div>
+                    <div class="ml-4">
+                        <p class="font-semibold text-black">Anna Hughes</p>
+                        <p class="text-gray-500 text-sm">August 9, 2025 • 7 min read</p>
+                    </div>
+                </div>
+                <a href="#" class="inline-flex items-center px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition duration-300">
+                    Read Full Article
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Categories -->
+<section class="bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-black mb-8 text-center" data-aos="fade-up" data-aos-duration="800">Browse by Category</h3>
+        <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <a href="#" class="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition duration-300">All Posts</a>
+            <a href="#" class="px-6 py-3 bg-white text-black border-2 border-black rounded-full hover:bg-black hover:text-white transition duration-300">Living Room</a>
+            <a href="#" class="px-6 py-3 bg-white text-black border-2 border-black rounded-full hover:bg-black hover:text-white transition duration-300">Bedroom</a>
+            <a href="#" class="px-6 py-3 bg-white text-black border-2 border-black rounded-full hover:bg-black hover:text-white transition duration-300">Kitchen</a>
+            <a href="#" class="px-6 py-3 bg-white text-black border-2 border-black rounded-full hover:bg-black hover:text-white transition duration-300">Decor</a>
+            <a href="#" class="px-6 py-3 bg-white text-black border-2 border-black rounded-full hover:bg-black hover:text-white transition duration-300">DIY Tips</a>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Grid -->
+<section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog Post 1 -->
+            <article class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition duration-300 hover:border-black" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                <img src="{% static 'image/slider1.jpg' %}" alt="Blog Post" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-gray-100 text-black text-sm rounded-full mb-3">Living Room</span>
+                    <h3 class="text-xl font-bold text-black mb-3 hover:text-gray-700">
+                        <a href="#">5 Ways to Refresh Your Living Room This Summer</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Brighten your living space with simple decor updates, fresh colors, and cozy accents.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-sm font-bold">JP</div>
+                            <span class="ml-2 text-sm text-gray-500">Jessica Parker</span>
+                        </div>
+                        <span class="text-sm text-gray-500">Aug 1, 2025</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition duration-300 hover:border-black" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                <img src="{% static 'image/slider2.jpg' %}" alt="Blog Post" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-gray-100 text-black text-sm rounded-full mb-3">Bedroom</span>
+                    <h3 class="text-xl font-bold text-black mb-3 hover:text-gray-700">
+                        <a href="#">Creating a Serene Minimalist Bedroom</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Tips to simplify your bedroom decor and create a relaxing sanctuary for better sleep.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-sm font-bold">KM</div>
+                            <span class="ml-2 text-sm text-gray-500">Kevin Martin</span>
+                        </div>
+                        <span class="text-sm text-gray-500">Jul 28, 2025</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition duration-300 hover:border-black" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                <img src="{% static 'image/slider3.jpg' %}" alt="Blog Post" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-gray-100 text-black text-sm rounded-full mb-3">Kitchen</span>
+                    <h3 class="text-xl font-bold text-black mb-3 hover:text-gray-700">
+                        <a href="#">Top Kitchen Design Ideas for Small Spaces</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Maximize functionality and style with these smart kitchen layout and decor tips.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-sm font-bold">SS</div>
+                            <span class="ml-2 text-sm text-gray-500">Samantha Smith</span>
+                        </div>
+                        <span class="text-sm text-gray-500">Jul 22, 2025</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition duration-300 hover:border-black" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                <img src="{% static 'image/slider3.jpg' %}" alt="Blog Post" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-gray-100 text-black text-sm rounded-full mb-3">Decor</span>
+                    <h3 class="text-xl font-bold text-black mb-3 hover:text-gray-700">
+                        <a href="#">5 Statement Pieces That Transform Any Room</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        How to choose and style bold furniture and artwork that bring character to your space.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-sm font-bold">AB</div>
+                            <span class="ml-2 text-sm text-gray-500">Angela Brown</span>
+                        </div>
+                        <span class="text-sm text-gray-500">Jul 18, 2025</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 5 -->
+            <article class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition duration-300 hover:border-black" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
+                <img src="{% static 'image/slider2.jpg' %}" alt="Blog Post" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-gray-100 text-black text-sm rounded-full mb-3">DIY Tips</span>
+                    <h3 class="text-xl font-bold text-black mb-3 hover:text-gray-700">
+                        <a href="#">Easy Weekend DIY Projects to Refresh Your Home</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Fun and simple DIY ideas to add personal touches and charm to your interiors.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-sm font-bold">MJ</div>
+                            <span class="ml-2 text-sm text-gray-500">Mark Johnson</span>
+                        </div>
+                        <span class="text-sm text-gray-500">Jul 10, 2025</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 6 -->
+            <article class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition duration-300 hover:border-black" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                <img src="{% static 'image/slider1.jpg' %}" alt="Blog Post" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-gray-100 text-black text-sm rounded-full mb-3">Living Room</span>
+                    <h3 class="text-xl font-bold text-black mb-3 hover:text-gray-700">
+                        <a href="#">How to Mix Modern and Vintage Decor</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Tips for blending contemporary and vintage styles for a unique, timeless look.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-sm font-bold">CL</div>
+                            <span class="ml-2 text-sm text-gray-500">Christine Lee</span>
+                        </div>
+                        <span class="text-sm text-gray-500">Jul 5, 2025</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

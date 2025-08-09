@@ -5,34 +5,44 @@
 
 
 <body class="bg-white">
-	<!-- Navigation (from previous design) -->
 
 
-	<!-- ...existing code... -->
 	<section class="relative h-screen w-full overflow-hidden">
 		<div id="carousel" class="relative h-full w-full">
 
 			<!-- Slide 1 -->
 			<div
 				class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out z-10 slide-active">
-				<img src="{% static 'image/slider1.jpg' %}" class="w-full h-full object-cover" alt="Slider 1">
+				<!-- Background Video -->
+				<video autoplay muted loop playsinline class="w-full h-full object-cover">
+					<source src="{% static 'video/showroom.mp4' %}" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+				<!-- Overlay -->
 				<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+
+				<!-- Content -->
 				<div
-					class="absolute inset-0 flex flex-col items-start justify-center text-left text-white px-8 md:px-24 z-20 space-y-6" >
+					class="absolute inset-0 flex flex-col items-start justify-center text-left text-white px-8 md:px-24 z-20 space-y-6">
 					<span
-						class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold tracking-widest uppercase mb-2 backdrop-blur">Award-Winning
-						Designs</span>
-					<h1 class="text-4xl md:text-5xl font-extrabold mb-2 leading-tight max-w-3xl drop-shadow-lg" data-aos="slide-right">Elegant
-						Interior Designs for Modern Living</h1>
-					<p class="text-lg  max-w-2xl mb-4 text-gray-200" data-aos="slide-left">Transform your home or office with our
-						bespoke solutions, tailored to your lifestyle and taste.</p>
+						class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold tracking-widest uppercase mb-2 backdrop-blur">
+						Award-Winning Designs
+					</span>
+					<h1 class="text-4xl md:text-5xl font-extrabold mb-2 leading-tight max-w-3xl drop-shadow-lg"
+						data-aos="slide-right">
+						Elegant Interior Designs for Modern Living
+					</h1>
+					<p class="text-lg max-w-2xl mb-4 text-gray-200" data-aos="slide-left">
+						Transform your home or office with our bespoke solutions, tailored to your lifestyle and taste.
+					</p>
 					<div class="flex flex-wrap gap-4">
 						<a href="#start"
-							class="bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition shadow-lg" data-aos="slide-right">Start
-							Now</a>
-						<a href="#contact"
-							class="border-2 border-white px-8 py-3 rounded text-white hover:bg-white hover:text-black transition shadow-lg" data-aos="slide-left">Contact
-							Us</a>
+							class="bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition shadow-lg"
+							data-aos="slide-right">Start Now</a>
+						<a href="contact"
+							class="border-2 border-white px-8 py-3 rounded text-white hover:bg-white hover:text-black transition shadow-lg"
+							data-aos="slide-left">Contact Us</a>
 					</div>
 					<div class="flex items-center gap-6 mt-6">
 						<div class="flex items-center gap-2">
@@ -50,94 +60,15 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Slide 2 -->
-			<div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out z-0">
-				<img src="{% static 'image/slider2.jpg' %}" class="w-full h-full object-cover" alt="Slider 2">
-				<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-				<div
-					class="absolute inset-0 flex flex-col items-start justify-center text-left text-white px-8 md:px-24 z-20 space-y-6">
-					<span
-						class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold tracking-widest uppercase mb-2 backdrop-blur">Personalized
-						Approach</span>
-					<h1 class="text-4xl md:text-5xl font-extrabold mb-2 leading-tight max-w-3xl drop-shadow-lg">Designs
-						That Speak Your Style</h1>
-					<p class="text-lg max-w-2xl mb-4 text-gray-200">Every project is unique. We listen,
-						understand, and deliver interiors that reflect your personality.</p>
-					<div class="flex flex-wrap gap-4">
-						<a href="#gallery"
-							class="bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition shadow-lg">View
-							Gallery</a>
-						<a href="#contact"
-							class="border-2 border-white px-8 py-3 rounded text-white hover:bg-white hover:text-black transition shadow-lg">Book
-							a Visit</a>
-					</div>
-					<div class="flex items-center gap-6 mt-6">
-						<div class="flex items-center gap-2">
-							<i class="fas fa-user-friends text-blue-400"></i>
-							<span class="text-sm">100+ Happy Clients</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<i class="fas fa-couch text-pink-400"></i>
-							<span class="text-sm">Custom Furniture</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Slide 3 -->
-			<div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out z-0">
-				<img src="{% static 'image/slider3.jpg' %}" class="w-full h-full object-cover" alt="Slider 3">
-				<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-				<div
-					class="absolute inset-0 flex flex-col items-start justify-center text-left text-white px-8 md:px-24 z-20 space-y-6">
-					<span
-						class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold tracking-widest uppercase mb-2 backdrop-blur">Crafted
-						With Care</span>
-					<h1 class="text-4xl md:text-5xl font-extrabold mb-2 leading-tight max-w-3xl drop-shadow-lg">Bespoke
-						Interiors, Crafted With Care</h1>
-					<p class="text-lg max-w-2xl mb-4 text-gray-200">From concept to completion, our team
-						ensures every detail is perfect for your dream space.</p>
-					<div class="flex flex-wrap gap-4">
-						<a href="#services"
-							class="bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition shadow-lg">Our
-							Services</a>
-						<a href="#contact"
-							class="border-2 border-white px-8 py-3 rounded text-white hover:bg-white hover:text-black transition shadow-lg">Get
-							Quote</a>
-					</div>
-					<div class="flex items-center gap-6 mt-6">
-						<div class="flex items-center gap-2">
-							<i class="fas fa-tools text-indigo-400"></i>
-							<span class="text-sm">Renovation Experts</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<i class="fas fa-headset text-green-400"></i>
-							<span class="text-sm">24/7 Support</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Indicator Buttons -->
-		<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
-			<button class="carousel-btn w-4 h-4 rounded-full bg-white/70 hover:bg-white transition"
-				onclick="showSlide(0)"></button>
-			<button class="carousel-btn w-4 h-4 rounded-full bg-white/40 hover:bg-white transition"
-				onclick="showSlide(1)"></button>
-			<button class="carousel-btn w-4 h-4 rounded-full bg-white/40 hover:bg-white transition"
-				onclick="showSlide(2)"></button>
 		</div>
 	</section>
-	<!-- ...existing code... -->
 
 
 
 
 
 	<!-- Company Overview Section -->
-	<section class="py-20 bg-gray-50" data-aos="fade-up">
+	<section class="py-20 bg-gray-50" id="start" data-aos="fade-up">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="text-center mb-16">
 				<h2 class="text-3xl font-black text-black mb-6">About FITSPACE</h2>
@@ -621,38 +552,7 @@
 		});
 	</script>
 
-	<script>
-		const slides = document.querySelectorAll('.carousel-slide');
-		const indicators = document.querySelectorAll('.carousel-btn');
-		let currentSlide = 0;
 
-		function showSlide(index) {
-			slides.forEach((slide, i) => {
-				slide.style.opacity = i === index ? '1' : '0';
-				slide.style.zIndex = i === index ? '10' : '0';
-				indicators[i].classList.toggle('bg-white/70', i === index);
-				indicators[i].classList.toggle('bg-white/40', i !== index);
-			});
-			currentSlide = index;
-		}
-
-		// Auto-slide every 6 seconds
-		setInterval(() => {
-			let next = (currentSlide + 1) % slides.length;
-			showSlide(next);
-		}, 6000);
-
-
-
-		// Mobile menu toggle
-		const mobileMenuButton = document.getElementById('mobile-menu-button');
-		const mobileMenu = document.getElementById('mobile-menu');
-
-		mobileMenuButton.addEventListener('click', () => {
-			mobileMenu.classList.toggle('hidden');
-		});
-
-	</script>
 
 	<!-- q and a  -->
 	<script>
