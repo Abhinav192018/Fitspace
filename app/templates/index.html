@@ -27,7 +27,7 @@
 					class="absolute inset-0 flex flex-col items-start justify-center text-left text-white px-8 md:px-24 z-20 space-y-6">
 					<span
 						class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold tracking-widest uppercase mb-2 backdrop-blur">
-						Award-Winning Designs
+						Modern Luxury
 					</span>
 					<h1 class="text-4xl md:text-5xl font-extrabold mb-2 leading-tight max-w-3xl drop-shadow-lg"
 						data-aos="slide-right">
@@ -83,24 +83,22 @@
 						people live, work, and interact. We believe that great design should be accessible, sustainable,
 						and tailored to each client's unique needs.</p>
 
-					<div class="grid grid-cols-2 gap-6 mt-8">
+					<div class="grid grid-cols-2 gap-6 mt-8" id="stats-section">
 						<div class="text-center">
-							<div class="text-3xl font-black text-black mb-2">150+</div>
+							<div class="count text-3xl font-black text-black mb-2" data-target="150">0</div>
 							<div class="text-gray-600">Projects Completed</div>
 						</div>
 						<div class="text-center">
-							<div class="text-3xl font-black text-black mb-2">5+</div>
+							<div class="count text-3xl font-black text-black mb-2" data-target="5">0</div>
 							<div class="text-gray-600">Years Experience</div>
 						</div>
 						<div class="text-center">
-							<div class="text-3xl font-black text-black mb-2">100+</div>
+							<div class="count text-3xl font-black text-black mb-2" data-target="100">0</div>
 							<div class="text-gray-600">Happy Clients</div>
 						</div>
-						<div class="text-center">
-							<div class="text-3xl font-black text-black mb-2">24/7</div>
-							<div class="text-gray-600">Support</div>
-						</div>
+						
 					</div>
+
 				</div>
 
 				<div class="grid grid-cols-2 gap-4">
@@ -288,7 +286,7 @@
 			</div>
 
 			<div class="text-center mt-12">
-				<a href="/gallery/"
+				<a href="/project/"
 					class="bg-black text-white px-8 py-4 text-lg font-bold uppercase tracking-wide hover:bg-gray-800 transition-all inline-block">View
 					All Projects</a>
 			</div>
@@ -568,6 +566,44 @@
 			});
 		});
 	</script>
+
+
+	<!-- counter  -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const counters = document.querySelectorAll(".count");
+			let counted = false;
+
+			function startCounting() {
+				counters.forEach(counter => {
+					let target = +counter.getAttribute("data-target");
+					let count = 0;
+					let step = target / 100; // adjust speed
+					let interval = setInterval(() => {
+						count += step;
+						if (count >= target) {
+							count = target;
+							clearInterval(interval);
+						}
+						counter.textContent = Math.floor(count) + (counter.dataset.target.includes("+") ? "+" : "");
+					}, 20);
+				});
+			}
+
+			// Intersection Observer to trigger when visible
+			const observer = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting && !counted) {
+						counted = true;
+						startCounting();
+					}
+				});
+			}, { threshold: 0.5 });
+
+			observer.observe(document.querySelector("#stats-section"));
+		});
+	</script>
+
 </body>
 
 
