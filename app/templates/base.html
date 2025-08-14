@@ -21,39 +21,146 @@
 </head>
 
 
+
 <style>
-    @keyframes revealFromBottom {
-        from {
-            clip-path: inset(100% 0 0 0);
+    .loader-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 180px;
+        height: 180px;
+        font-family: "Inter", sans-serif;
+        font-size: 1.2em;
+        font-weight: 300;
+        color: black;
+        border-radius: 50%;
+    }
+
+    .loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        animation: loader-rotate 2s linear infinite;
+    }
+
+    @keyframes loader-rotate {
+        0% {
+            transform: rotate(90deg);
+            box-shadow:
+                0 10px 20px 0 #000 inset,
+                0 20px 30px 0 #ad5fff inset,
+                0 60px 60px 0 #471eec inset;
         }
 
-        to {
-            clip-path: inset(0 0 0 0);
+        50% {
+            transform: rotate(270deg);
+            box-shadow:
+                0 10px 20px 0 #000 inset,
+                0 20px 10px 0 #d60a47 inset,
+                0 40px 60px 0 #311e80 inset;
+        }
+
+        100% {
+            transform: rotate(450deg);
+            box-shadow:
+                0 10px 20px 0 #000 inset,
+                0 20px 30px 0 #ad5fff inset,
+                0 60px 60px 0 #471eec inset;
         }
     }
 
-    #logo-black {
-    clip-path: inset(100% 0 0 0); /* Fully hidden at start */
-    transition: clip-path 0.2s ease;
-}
+    .loader-letter {
+        display: inline-block;
+        opacity: 0.4;
+        transform: translateY(0);
+        animation: loader-letter-anim 2s infinite;
+    }
 
+    .loader-letter:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .loader-letter:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+
+    .loader-letter:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+
+    .loader-letter:nth-child(4) {
+        animation-delay: 0.3s;
+    }
+
+    .loader-letter:nth-child(5) {
+        animation-delay: 0.4s;
+    }
+
+    .loader-letter:nth-child(6) {
+        animation-delay: 0.5s;
+    }
+
+    .loader-letter:nth-child(7) {
+        animation-delay: 0.6s;
+    }
+
+    .loader-letter:nth-child(8) {
+        animation-delay: 0.7s;
+    }
+
+    .loader-letter:nth-child(9) {
+        animation-delay: 0.8s;
+    }
+
+    .loader-letter:nth-child(10) {
+        animation-delay: 0.9s;
+    }
+
+    @keyframes loader-letter-anim {
+
+        0%,
+        100% {
+            opacity: 0.4;
+            transform: translateY(0);
+        }
+
+        20% {
+            opacity: 1;
+            transform: scale(1.15);
+        }
+
+        40% {
+            opacity: 0.7;
+            transform: translateY(0);
+        }
+    }
 </style>
-
 
 
 <body>
 
-    <!-- Logo Loader -->
-<div id="logo-loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
-    <div class="relative w-40 h-40 overflow-hidden">
-        <!-- White logo -->
-        <img src="{% static 'image/logo.png' %}" alt="Logo white"
-            class="absolute inset-0 w-full h-full object-contain brightness-0 invert">
-        <!-- Black logo (will be revealed gradually) -->
-        <img src="{% static 'image/logo.png' %}" alt="Logo black"
-            class="absolute inset-0 w-full h-full object-contain" id="logo-black">
+    <!-- loader  -->
+    <!-- Fullscreen Loader -->
+    <div id="logo-loader" class="fixed inset-0 flex items-center justify-center bg-white z-[9999]">
+        <div class="loader-wrapper">
+            <span class="loader-letter">L</span>
+            <span class="loader-letter">O</span>
+            <span class="loader-letter">A</span>
+            <span class="loader-letter">D</span>
+            <span class="loader-letter">I</span>
+            <span class="loader-letter">N</span>
+            <span class="loader-letter">G</span>
+        
+            <div class="loader"></div>
+        </div>
     </div>
-</div>
+
+
+
 
 
 
@@ -182,7 +289,8 @@
                 <p>&copy; 2025 FITSPACE. All rights reserved.</p>
             </div>
             <div class="footer-bottom">
-                <p>Designed And Developed by <a href="https://inspirezesttechnologies.com/" target="_blank" class="text-decorator-none text-white">InspireZest Technologies Pvt Ltd</a></p>
+                <p>Designed And Developed by <a href="https://inspirezesttechnologies.com/" target="_blank"
+                        class="text-decorator-none text-white">InspireZest Technologies Pvt Ltd</a></p>
             </div>
         </div>
     </footer>
@@ -249,59 +357,19 @@
     </script>
 
 
+<!-- loader  -->
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const blackLogo = document.getElementById("logo-black");
-
-    // Estimate loading progress
-    let totalResources = document.images.length + document.scripts.length + document.styleSheets.length;
-    let loadedResources = 0;
-
-    function updateProgress() {
-        loadedResources++;
-        let progress = Math.min(loadedResources / totalResources, 1); // 0 to 1
-        let clipValue = 100 - Math.floor(progress * 100);
-        blackLogo.style.clipPath = `inset(${clipValue}% 0 0 0)`;
-    }
-
-    // Track image load
-    document.querySelectorAll("img").forEach(img => {
-        if (img.complete) {
-            updateProgress();
-        } else {
-            img.addEventListener("load", updateProgress);
-            img.addEventListener("error", updateProgress);
-        }
-    });
-
-    // Track script load
-    document.querySelectorAll("script").forEach(script => {
-        if (script.readyState === "complete" || script.readyState === "loaded") {
-            updateProgress();
-        } else {
-            script.addEventListener("load", updateProgress);
-            script.addEventListener("error", updateProgress);
-        }
-    });
-
-    // Track stylesheet load
-    document.querySelectorAll("link[rel='stylesheet']").forEach(link => {
-        link.addEventListener("load", updateProgress);
-        link.addEventListener("error", updateProgress);
-    });
-
-    // Remove loader once everything is loaded
-    window.addEventListener("load", () => {
-        blackLogo.style.clipPath = "inset(0 0 0 0)"; // Ensure fully filled
-        setTimeout(() => {
+        window.addEventListener("load", function () {
             const loader = document.getElementById("logo-loader");
             loader.style.opacity = "0";
             loader.style.transition = "opacity 0.5s ease";
-            setTimeout(() => loader.style.display = "none", 500);
-        }, 300); // small delay so last fill is visible
-    });
-});
-</script>
+            setTimeout(() => loader.remove(), 500);
+        });
+    </script>
+
+
+
+
 
 
 

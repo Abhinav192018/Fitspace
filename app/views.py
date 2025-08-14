@@ -1,7 +1,6 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from .models import InteriorWork,GalleryImage,Contact
 from .forms import ContactForm
-# Create your views here.
 
 
 
