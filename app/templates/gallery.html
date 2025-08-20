@@ -24,16 +24,36 @@
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                {% for i in images %}
+                {% for i in page_obj %}
                 <!-- Image Card -->
-                <div class="relative overflow-hidden rounded-2xl shadow-xl group">
+                <div class="relative overflow-hidden rounded-2xl shadow-xl group" data-aos="fade-right">
                     <!-- Image -->
-                    <img src="{{ i.image.url }}" alt="Gallery Image"
+                    <img src="{{ i.image.url }}" alt="Gallery Image" 
                         class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
-                    
-                   
                 </div>
                 {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12 space-x-2">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" 
+                       class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">Previous</a>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <span class="px-4 py-2 bg-black text-white rounded-lg">{{ num }}</span>
+                    {% else %}
+                        <a href="?page={{ num }}" 
+                           class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" 
+                       class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">Next</a>
+                {% endif %}
             </div>
         </div>
     </section>
