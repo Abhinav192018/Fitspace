@@ -6,7 +6,8 @@
 <!-- Hero Section -->
 <section class="relative py-32 bg-black">
   <!-- Background image using img tag -->
-  <img src="{% static 'image/slider2.jpg' %}" alt="Signature Services" class="absolute inset-0 w-full h-full object-cover z-0">
+  <img src="{% static 'image/slider2.jpg' %}" alt="Signature Services"
+    class="absolute inset-0 w-full h-full object-cover z-0">
 
   <!-- Overlay -->
   <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
@@ -15,19 +16,20 @@
   <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6" data-aos="fade-down">Our Signature Services</h1>
     <p class="text-xl text-gray-200 max-w-4xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
-      Discover how we blend creativity, precision, and luxury to design timeless spaces that speak to your lifestyle and exceed your expectations.
+      Discover how we blend creativity, precision, and luxury to design timeless spaces that speak to your lifestyle and
+      exceed your expectations.
     </p>
     <div class="flex justify-center space-x-6 text-white" data-aos="fade-up" data-aos-delay="200">
       <div class="text-center">
-        <div class="text-3xl font-bold">500+</div>
+        <div class="text-3xl font-bold">500</div>
         <div class="text-sm">Projects Completed</div>
       </div>
       <div class="text-center">
-        <div class="text-3xl font-bold">15+</div>
+        <div class="text-3xl font-bold">5</div>
         <div class="text-sm">Years Experience</div>
       </div>
       <div class="text-center">
-        <div class="text-3xl font-bold">98%</div>
+        <div class="text-3xl font-bold">495</div>
         <div class="text-sm">Client Satisfaction</div>
       </div>
     </div>
@@ -40,41 +42,33 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-4xl font-bold text-black mb-6" data-aos="fade-up">Why Choose Our Design Services?</h2>
     <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
-      We combine years of expertise with innovative design solutions to transform your vision into reality. Our comprehensive approach ensures every detail is perfect.
+      We combine years of expertise with innovative design solutions to transform your vision into reality. Our
+      comprehensive approach ensures every detail is perfect.
     </p>
-    
-    <div class="grid md:grid-cols-4 gap-8">
+
+    <div class="grid md:grid-cols-3 gap-8">
       <div class="text-center" data-aos="fade-up" data-aos-delay="100">
         <div class="w-16 h-16 mx-auto mb-4 bg-black text-white rounded-full flex items-center justify-center">
-          <i class="fas fa-lightbulb text-2xl"></i>
+          <i class="fas fa-award text-2xl"></i>
         </div>
-        <h3 class="text-xl font-semibold text-black mb-2">Creative Excellence</h3>
-        <p class="text-gray-600">Innovative designs that reflect your unique style and personality.</p>
+        <h3 class="text-xl font-semibold text-black mb-2">Expert Team</h3>
       </div>
-      
+
       <div class="text-center" data-aos="fade-up" data-aos-delay="200">
         <div class="w-16 h-16 mx-auto mb-4 bg-black text-white rounded-full flex items-center justify-center">
           <i class="fas fa-clock text-2xl"></i>
         </div>
         <h3 class="text-xl font-semibold text-black mb-2">Timely Delivery</h3>
-        <p class="text-gray-600">Projects completed on schedule without compromising quality.</p>
       </div>
-      
+
       <div class="text-center" data-aos="fade-up" data-aos-delay="300">
         <div class="w-16 h-16 mx-auto mb-4 bg-black text-white rounded-full flex items-center justify-center">
-          <i class="fas fa-dollar-sign text-2xl"></i>
+          <i class="fas fa-pound-sign text-2xl"></i>
         </div>
         <h3 class="text-xl font-semibold text-black mb-2">Budget Friendly</h3>
-        <p class="text-gray-600">Transparent pricing with solutions for every budget range.</p>
       </div>
-      
-      <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-        <div class="w-16 h-16 mx-auto mb-4 bg-black text-white rounded-full flex items-center justify-center">
-          <i class="fas fa-handshake text-2xl"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-black mb-2">Full Support</h3>
-        <p class="text-gray-600">Ongoing support from concept to completion and beyond.</p>
-      </div>
+
+
     </div>
   </div>
 </section>
@@ -88,91 +82,26 @@
         From residential havens to commercial spaces, we offer comprehensive design solutions tailored to your needs.
       </p>
     </div>
-    
+
     <div class="grid md:grid-cols-3 gap-10">
       <!-- Residential Design -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white" data-aos="fade-up" data-aos-delay="100">
-        <img src="{% static 'image/6.jpg' %}" alt="Residential" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+       {% for s in services%}
+      <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white" data-aos="fade-up"
+        data-aos-delay="100">
+        <img src="{{s.image.url}}" alt="Services"
+          class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
         <div class="p-8">
-          <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-couch text-xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-black mb-3">Residential Interior Design</h3>
-          <p class="text-gray-600 mb-4">Transform your house into a luxurious haven tailored to your personality and lifestyle needs.</p>
-        
-          <a href="{% url 'project' %}" class="inline-block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300">view More</a>
-        </div>
-      </div>
+       
+          <h3 class="text-2xl font-bold text-black mb-3">{{s.title}}</h3>
+          <p class="text-gray-600 mb-4">{{s.description}}</p>
 
-      <!-- Commercial Design -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white" data-aos="fade-up" data-aos-delay="200">
-        <img src="{% static 'image/7.jpg' %}" alt="Commercial" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-        <div class="p-8">
-          <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-building text-xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-black mb-3">Commercial Interior Design</h3>
-          <p class="text-gray-600 mb-4">Boost brand identity and productivity with spaces that work as hard as you do.</p>
-         
-          <a href="{% url 'project' %}" class="inline-block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300">View More</a>
+          <a href="{% url 'project' %}"
+            class="inline-block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300">view
+            More</a>
         </div>
       </div>
+      {% endfor %}
 
-      <!-- Space Planning -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white" data-aos="fade-up" data-aos-delay="300">
-        <img src="{% static 'image/8.jpg' %}" alt="Space Planning" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-        <div class="p-8">
-          <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-pencil-ruler text-xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-black mb-3">Space Planning & Layout</h3>
-          <p class="text-gray-600 mb-4">We maximize the flow, comfort, and purpose of every square foot of your space.</p>
-        
-          <a href="{% url 'project' %}" class="inline-block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300">View More</a>
-        </div>
-      </div>
-
-      <!-- Renovation -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white" data-aos="fade-up" data-aos-delay="400">
-        <img src="{% static 'image/9.jpg' %}" alt="Renovation" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-        <div class="p-8">
-          <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-tools text-xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-black mb-3">Renovation & Remodeling</h3>
-          <p class="text-gray-600 mb-4">Reimagine your interiors with modern upgrades and cohesive redesigns.</p>
-         
-          <a href="{% url 'project' %}" class="inline-block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300">View More</a>
-        </div>
-      </div>
-
-      <!-- Color Consultation -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white" data-aos="fade-up" data-aos-delay="500">
-        <img src="{% static 'image/10.jpg' %}" alt="Color Consultation" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-        <div class="p-8">
-          <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-palette text-xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-black mb-3">Color & Material Consultation</h3>
-          <p class="text-gray-600 mb-4">Bring life to your space with harmonious palettes and rich textures.</p>
-        
-          <a href="{% url 'project' %}" class="inline-block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300">View More</a>
-        </div>
-      </div>
-
-      <!-- Custom Furniture -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white" data-aos="fade-up" data-aos-delay="600">
-        <img src="{% static 'image/6.jpg' %}" alt="Custom Furniture" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-        <div class="p-8">
-          <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-chair text-xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-black mb-3">Custom Furniture Design</h3>
-          <p class="text-gray-600 mb-4">Exclusive furniture pieces crafted to match your space and identity perfectly.</p>
-      
-          <a href="{% url 'project' %}" class="inline-block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300">View More</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -186,28 +115,38 @@
         A systematic approach that ensures your vision becomes reality through careful planning and execution.
       </p>
     </div>
-    
+
     <div class="grid md:grid-cols-4 gap-8">
       <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-20 h-20 mx-auto mb-6 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+        <div
+          class="w-20 h-20 mx-auto mb-6 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold">
+          1</div>
         <h3 class="text-xl font-semibold text-black mb-3">Consultation</h3>
-        <p class="text-gray-600">We discuss your vision, needs, budget, and timeline to understand your project fully.</p>
+        <p class="text-gray-600">We discuss your vision, needs, budget, and timeline to understand your project fully.
+        </p>
       </div>
-      
+
       <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-20 h-20 mx-auto mb-6 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+        <div
+          class="w-20 h-20 mx-auto mb-6 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold">
+          2</div>
         <h3 class="text-xl font-semibold text-black mb-3">Design Development</h3>
-        <p class="text-gray-600">Our team creates detailed plans, 3D renderings, and material selections for your approval.</p>
+        <p class="text-gray-600">Our team creates detailed plans, 3D renderings, and material selections for your
+          approval.</p>
       </div>
-      
+
       <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-        <div class="w-20 h-20 mx-auto mb-6 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+        <div
+          class="w-20 h-20 mx-auto mb-6 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold">
+          3</div>
         <h3 class="text-xl font-semibold text-black mb-3">Implementation</h3>
         <p class="text-gray-600">We coordinate all aspects of construction, installation, and project management.</p>
       </div>
-      
+
       <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-        <div class="w-20 h-20 mx-auto mb-6 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+        <div
+          class="w-20 h-20 mx-auto mb-6 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold">
+          4</div>
         <h3 class="text-xl font-semibold text-black mb-3">Final Reveal</h3>
         <p class="text-gray-600">We complete final touches and styling to deliver your dream space on schedule.</p>
       </div>
@@ -224,38 +163,40 @@
         Areas where we excel and deliver exceptional results that set us apart from the competition.
       </p>
     </div>
-    
+
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
         <i class="fas fa-leaf text-3xl text-black mb-4"></i>
         <h3 class="text-xl font-semibold text-black mb-2">Sustainable Design</h3>
-        <p class="text-gray-600">Eco-friendly materials and energy-efficient solutions for environmentally conscious spaces.</p>
+        <p class="text-gray-600">Eco-friendly materials and energy-efficient solutions for environmentally conscious
+          spaces.</p>
       </div>
-      
+
       <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
         <i class="fas fa-gem text-3xl text-black mb-4"></i>
         <h3 class="text-xl font-semibold text-black mb-2">Luxury Interiors</h3>
         <p class="text-gray-600">High-end finishes and premium materials for sophisticated, elegant living spaces.</p>
       </div>
-      
+
       <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
         <i class="fas fa-mobile-alt text-3xl text-black mb-4"></i>
         <h3 class="text-xl font-semibold text-black mb-2">Smart Home Integration</h3>
         <p class="text-gray-600">Cutting-edge technology seamlessly integrated into beautiful, functional designs.</p>
       </div>
-      
+
       <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
         <i class="fas fa-paint-brush text-3xl text-black mb-4"></i>
         <h3 class="text-xl font-semibold text-black mb-2">Artistic Elements</h3>
         <p class="text-gray-600">Custom artwork, murals, and decorative features that make your space unique.</p>
       </div>
-      
+
       <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="500">
         <i class="fas fa-universal-access text-3xl text-black mb-4"></i>
         <h3 class="text-xl font-semibold text-black mb-2">Accessible Design</h3>
-        <p class="text-gray-600">Universal design principles ensuring spaces are beautiful and accessible to everyone.</p>
+        <p class="text-gray-600">Universal design principles ensuring spaces are beautiful and accessible to everyone.
+        </p>
       </div>
-      
+
       <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="600">
         <i class="fas fa-history text-3xl text-black mb-4"></i>
         <h3 class="text-xl font-semibold text-black mb-2">Heritage Restoration</h3>
@@ -273,8 +214,12 @@
       Let's discuss your vision and create something extraordinary together. Get started with a free consultation today.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-      <a href="#" class="inline-block bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Get Free Consultation</a>
-      <a href="#" class="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300">View Portfolio</a>
+      <a href="#"
+        class="inline-block bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Get
+        Free Consultation</a>
+      <a href="#"
+        class="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300">View
+        Portfolio</a>
     </div>
   </div>
 </section>

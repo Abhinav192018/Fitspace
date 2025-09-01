@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.utils import timezone
 from datetime import timedelta
-from .models import InteriorWork, GalleryImage, Blog, Featured_Blog, banner_Image, Contact
+from .models import InteriorWork, GalleryImage, Blog, Featured_Blog, banner_Image, Contact,Services
 
 
 # ✅ Show Image Preview Helper
@@ -139,3 +139,20 @@ class ContactAdmin(admin.ModelAdmin):
         ('created_at', admin.DateFieldListFilter),  # calendar/date filter
     )
     search_fields = ('name', 'phone', 'subject')
+
+
+
+@admin.register(Services)
+class ServicesAdmin(admin.ModelAdmin):
+    list_display = ("image_preview", "title", "short_description")
+    search_fields = ("title", "description")
+
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="height:60px;"/>', obj.image.url)
+        return "No Image"
+    image_preview.short_description = "Service Image"
+
+    def short_description(self, obj):
+        return (obj.description[:75] + "...") if len(obj.description) > 75 else obj.description
+    short_description.short_description = "Description"

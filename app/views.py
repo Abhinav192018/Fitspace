@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import InteriorWork,GalleryImage,Contact,Blog,Featured_Blog,banner_Image
+from .models import InteriorWork,GalleryImage,Contact,Blog,Featured_Blog,banner_Image,Services
 from .forms import ContactForm
 
 
@@ -7,14 +7,16 @@ from .forms import ContactForm
 
 
 def Home(request):
+    projects=InteriorWork.objects.order_by("-id")[:3]
     banner=banner_Image.objects.order_by("-id").first()
-    return render(request,'index.html',{"banner":banner})
+    return render(request,'index.html',{"banner":banner,"projects":projects})
 
 def About(request):
     return render(request,'about.html')
 
 def Service(request):
-    return render(request,'services.html')
+    Service=Services.objects.all()
+    return render(request,'services.html',{"services":Service})
 
 def blog(request):
     blog=Blog.objects.all()

@@ -16,6 +16,15 @@ class GalleryImage(models.Model):
 
 class InteriorWork(models.Model):
     INTERIOR_TYPES = [
+        ('Sliding Wardrobe', 'Sliding Wardrobe'),
+        ('Media Wall', 'Media Wall'),
+        ('Fitted Wardrobe', 'Fitted Wardrobe'),
+        ('Fitted Kitchens', 'Fitted Kitchens'),
+        ('Loft Wardrobes', 'Loft Wardrobes'),
+        ('Home Office', 'Home Office'),
+
+
+
         ('Living Room', 'Living Room'),
         ('Bedroom', 'Bedroom'),
         ('Kitchen', 'Kitchen'),
@@ -23,7 +32,6 @@ class InteriorWork(models.Model):
         ('Bathroom', 'Bathroom'),
         ('Dining Area', 'Dining Area'),
         ('Commercial Space', 'Commercial Space'),
-        ('Other', 'Other'),
     ]
 
     title = models.CharField(max_length=255)
@@ -51,6 +59,16 @@ from django.db import models
 
 class Blog(models.Model):
     CATEGORIES = [
+
+
+        ('Sliding Wardrobe', 'Sliding Wardrobe'),
+        ('Media Wall', 'Media Wall'),
+        ('Fitted Wardrobe', 'Fitted Wardrobe'),
+        ('Fitted Kitchens', 'Fitted Kitchens'),
+        ('Loft Wardrobes', 'Loft Wardrobes'),
+        ('Home Office', 'Home Office'),
+
+
         ('Living Room', 'Living Room'),
         ('Bedroom', 'Bedroom'),
         ('Kitchen', 'Kitchen'),
@@ -58,7 +76,6 @@ class Blog(models.Model):
         ('Bathroom', 'Bathroom'),
         ('Dining Area', 'Dining Area'),
         ('Commercial Space', 'Commercial Space'),
-        ('Other', 'Other'),
     ]
 
     title = models.CharField(max_length=255)
@@ -77,6 +94,15 @@ class Blog(models.Model):
 
 class Featured_Blog(models.Model):
     CATEGORIES = [
+        ('Sliding Wardrobe', 'Sliding Wardrobe'),
+        ('Media Wall', 'Media Wall'),
+        ('Fitted Wardrobe', 'Fitted Wardrobe'),
+        ('Fitted Kitchens', 'Fitted Kitchens'),
+        ('Loft Wardrobes', 'Loft Wardrobes'),
+        ('Home Office', 'Home Office'),
+
+
+        
         ('Living Room', 'Living Room'),
         ('Bedroom', 'Bedroom'),
         ('Kitchen', 'Kitchen'),
@@ -84,7 +110,6 @@ class Featured_Blog(models.Model):
         ('Bathroom', 'Bathroom'),
         ('Dining Area', 'Dining Area'),
         ('Commercial Space', 'Commercial Space'),
-        ('Other', 'Other'),
     ]
 
     title = models.CharField(max_length=255)
@@ -111,3 +136,9 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"Message from {self.name} - {self.subject}"
+    
+
+class Services(models.Model):
+    image=models.ImageField(upload_to="services/")
+    title=models.CharField(max_length=200)
+    description=models.TextField()
